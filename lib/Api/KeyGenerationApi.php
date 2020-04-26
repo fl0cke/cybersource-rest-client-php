@@ -108,10 +108,11 @@ class KeyGenerationApi
      * Generate Key
      *
      * @param \CyberSource\Model\GeneratePublicKeyRequest $generatePublicKeyRequest  (required)
+     * @param array $queryParams (optional)
      * @throws \CyberSource\ApiException on non-2xx response
      * @return array of \CyberSource\Model\FlexV1KeysPost200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest)
+    public function generatePublicKeyWithHttpInfo($generatePublicKeyRequest, $queryParams = [])
     {
         // verify the required parameter 'generatePublicKeyRequest' is set
         if ($generatePublicKeyRequest === null) {
@@ -120,7 +121,6 @@ class KeyGenerationApi
         // parse inputs
         $resourcePath = "/flex/v1/keys";
         $httpBody = '';
-        $queryParams = [];
         $headerParams = [];
         $formParams = [];
         $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
